@@ -1,5 +1,26 @@
-<script setup></script>
+<template>
+  <SignUp />
+</template>
 
-<template></template>
-
-<style scoped></style>
+<script>
+import SignUp from "./components/SignUp.vue";
+export default {
+  name: "App",
+  components: {
+    SignUp,
+  },
+};
+</script>
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+* {
+  background-color: #f5f5f5;
+}
+</style>
