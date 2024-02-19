@@ -4,6 +4,7 @@
   <h1>Hello {{ name }}, Welcome to Home page</h1>
 
   <ul>
+    <!-- <img src="../assets/placeholder-restaurant.png" /> -->
     <li v-for="item in restaurant" :key="item.id">
       <Card
         :name="item.name"

@@ -1,7 +1,7 @@
 <template>
   <Header />
   <br /><br />
-  <h1>Hello User, Update a restaurant</h1>
+  <h1>Hello {{ username }}, Update a restaurant</h1>
   <br /><br />
   <form class="update">
     <input
@@ -47,6 +47,7 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
+      username: "",
       restaurant: {
         name: "",
         address: "",
@@ -63,7 +64,7 @@ export default {
       }
       if (this.restaurant.cloudinaryImageId === "") {
         this.restaurant.cloudinaryImageId =
-          "../assets/placeholder-restaurant.png";
+          "/src/assets/placeholder-restaurant.png";
       }
       let result = await axios.put(
         `http://127.0.0.1:3000/restaurants/${this.id}`,
@@ -88,7 +89,7 @@ export default {
     if (!user) {
       this.$router.push({ name: "SignUp" });
     }
-
+    this.username = JSON.parse(user).name;
     let details = await axios.get(
       `http://localhost:3000/restaurants/${this.id}`
     );

@@ -32,11 +32,8 @@ export default {
         `http://localhost:3000/restaurants/${id}`
       );
       if (result.status === 200) {
-        alert("User deleted successfully");
+        alert("Restaurant deleted from the list successfully");
       }
-    },
-    async updateCard(id) {
-      console.log(id);
     },
   },
 };

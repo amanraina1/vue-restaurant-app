@@ -23,24 +23,34 @@
       "name": "aman testing",
       "email": "aman@test.com",
       "password": "testing@123"
+    },
+    {
+      "id": "8c94",
+      "name": "Aman Raina",
+      "email": "aman@tesst123.com",
+      "password": "testpassword"
+    },
+    {
+      "id": "4196",
+      "name": "Aman Raina",
+      "email": "aman@test123.com",
+      "password": "123456"
+    },
+    {
+      "id": "4ca6",
+      "name": "Naruto",
+      "email": "naruto.uzumaki@gmail.com",
+      "password": "dattebayo"
     }
   ],
   "restaurants": [
     {
       "name": "Bakingo",
-      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
       "contact": "96222",
       "address": "Shastri Nagar",
-      "id": "c97d",
-      "avgRating": "4.5"
-    },
-    {
-      "name": "Burger King",
-      "contact": "123456",
-      "address": "Old Railway Road",
-      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
-      "avgRating": "4.7",
-      "id": "125878"
+      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
+      "avgRating": "4.5",
+      "id": "c97d"
     },
     {
       "id": "3939",
@@ -217,6 +227,14 @@
       "address": "Huda Complex",
       "contact": "098438778",
       "avgRating": "4.1"
+    },
+    {
+      "id": "417819",
+      "name": "NOTO",
+      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/81ac87e5c89c16adc867be38ce5a1ba3",
+      "address": "Jmd Galleria",
+      "contact": "243098",
+      "avgRating": "4.6"
     }
   ]
 }
