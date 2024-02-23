@@ -8,7 +8,9 @@
     <button v-on:click="login">LogIn</button>
     <br /><br />
     <p>
-      <router-link to="/signup">SignUp Page</router-link>
+      <router-link to="/signup">
+        <button>Go To Sign Up Page</button>
+      </router-link>
     </p>
   </div>
 </template>
@@ -35,6 +37,10 @@ export default {
       let result = await axios.get(
         `http://localhost:3000/users?email=${this.email}&password=${this.password}`
       );
+      // if (result.data[0].isAdmin === true) {
+      //   localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+      //   this.$router.push({ name: "Home" });
+      // }
       if (result.status === 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         this.$router.push({ name: "Home" });

@@ -9,7 +9,7 @@
     <button v-on:click="sendData">Sign Up</button>
     <br /><br />
     <p>
-      <router-link to="/login">Login Page</router-link>
+      <router-link to="/login"> <button>Go To Login Page</button> </router-link>
     </p>
   </div>
 </template>

@@ -32,10 +32,10 @@ export default {
   methods: {
     async loadData() {
       const user = localStorage.getItem("user-info");
-      this.name = JSON.parse(user).name;
       if (!user) {
         this.$router.push({ name: "SignUp" });
       }
+      this.name = JSON.parse(user).name;
       let result = await axios.get("http://localhost:3000/restaurants");
       this.restaurant = result.data;
     },

@@ -2,7 +2,7 @@
   <div class="image-container">
     <img :src="cloudinaryImageId" alt="restaurant image" />
     <div class="details">
-      <span class="name">{{ name }}</span>
+      <span class="name"> {{ name }}</span>
       <span class="ratings">⭐️{{ avgRating }} • {{ contact }}</span>
       <span class="address">{{ address }}</span>
       <span class="icon">
@@ -47,7 +47,7 @@ export default {
 .image-container {
   width: 250px;
   height: 400px;
-  margin: 50px;
+  margin: 30px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

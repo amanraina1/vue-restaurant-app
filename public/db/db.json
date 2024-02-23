@@ -1,46 +1,46 @@
 {
   "users": [
     {
+      "id": "c0a3",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "password": "admin",
+      "isAdmin": true
+    },
+    {
       "id": "2338",
       "name": "testing",
       "email": "test@testing.com",
-      "password": "122334"
+      "password": "122334",
+      "isAdmin": false
     },
     {
       "id": "e12c",
       "name": "peter",
       "email": "peter@test.com",
-      "password": "peter123"
+      "password": "peter123",
+      "isAdmin": false
     },
     {
       "id": "bbde",
       "name": "aman raina",
       "email": "amanraina@test.com",
-      "password": "me@maanraina"
-    },
-    {
-      "id": "eaa6",
-      "name": "aman testing",
-      "email": "aman@test.com",
-      "password": "testing@123"
-    },
-    {
-      "id": "8c94",
-      "name": "Aman Raina",
-      "email": "aman@tesst123.com",
-      "password": "testpassword"
-    },
-    {
-      "id": "4196",
-      "name": "Aman Raina",
-      "email": "aman@test123.com",
-      "password": "123456"
+      "password": "me@maanraina",
+      "isAdmin": false
     },
     {
       "id": "4ca6",
       "name": "Naruto",
       "email": "naruto.uzumaki@gmail.com",
-      "password": "dattebayo"
+      "password": "dattebayo",
+      "isAdmin": false
+    },
+    {
+      "id": "e2ed",
+      "name": "Aman Raina",
+      "email": "aman@test413.com",
+      "password": "123Aman",
+      "isAdmin": false
     }
   ],
   "restaurants": [

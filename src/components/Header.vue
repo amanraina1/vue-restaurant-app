@@ -19,10 +19,12 @@ export default {
 </script>
 <style>
 .nav {
+  width: 100vw;
   background-color: skyblue;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .nav a {
@@ -34,9 +36,9 @@ export default {
   text-align: center;
   padding: 10px 14px;
   text-decoration: none;
-  font-size: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  /* font-size: 20px; */
+  /* margin-left: 40px; */
+  /* margin-right: 40px; */
 }
 .nav a:hover {
   background-color: #f5f5f5;
