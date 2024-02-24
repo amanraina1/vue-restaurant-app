@@ -14,6 +14,20 @@
           <span>{{ item.rating }}⭐️</span>
         </div>
         <h4>{{ item.message }}</h4>
+        <img
+          v-on:click="deleteComment"
+          v-if="item.id === userId"
+          class="delete-icon"
+          src="../assets/delete.png"
+          alt="delete icon"
+        />
+        <img
+          v-on:click="deleteComment(item.id)"
+          v-if="isAdmin"
+          src="../assets/delete.png"
+          alt="delete icon"
+          class="delete-icon"
+        />
       </li>
     </ul>
     <div class="comments">
@@ -47,7 +61,9 @@ export default {
     return {
       rating: "",
       username: "",
+      userId: "",
       message: "",
+      isAdmin: false,
       id: this.$route.params.id,
       reviews: [],
       restaurant: {
@@ -60,20 +76,19 @@ export default {
     };
   },
   methods: {
-    async print() {
-      const user = localStorage.getItem("user-info");
-      const userId = JSON.parse(user).id;
-      const name = JSON.parse(user).name;
-      this.reviews = [
-        ...this.reviews,
-        {
-          id: userId,
-          name: name,
-          message: this.message,
-          rating: this.rating,
-        },
-      ];
-      //   console.log(this.reviews);
+    async deleteComment(id) {
+      if (this.isAdmin) {
+        // Logic to delete  comment by admin
+        const deleteUser = this.reviews.filter((item) => item.id !== id);
+        this.reviews = deleteUser;
+      } else {
+        // Logic for deleting the comment on clicking of the delete icon
+        const validateUser = this.reviews.filter(
+          (item) => item.id !== this.userId
+        );
+        this.reviews = validateUser;
+      }
+
       let result = await axios.put(
         `http://127.0.0.1:3000/restaurants/${this.id}`,
         {
@@ -85,7 +100,48 @@ export default {
           reviews: this.reviews,
         }
       );
-      console.log(result);
+    },
+    async print() {
+      // Validation for both fields, so they are not empty
+      if (!this.message || !this.rating) {
+        alert("Both fields are mandatory");
+        return;
+      }
+
+      // Validation to see if there is an comment by other user, so we will edit it
+      const duplicateUser = this.reviews.find(
+        (item) => item.id === this.userId
+      );
+      if (duplicateUser) {
+        duplicateUser.message = this.message;
+        duplicateUser.rating = this.rating;
+      } else {
+        this.reviews = [
+          ...this.reviews,
+          {
+            id: this.userId,
+            name: this.username,
+            message: this.message,
+            rating: this.rating,
+          },
+        ];
+      }
+
+      // Updating the database
+      let result = await axios.put(
+        `http://127.0.0.1:3000/restaurants/${this.id}`,
+        {
+          name: this.restaurant.name,
+          contact: this.restaurant.contact,
+          address: this.restaurant.address,
+          cloudinaryImageId: this.restaurant.cloudinaryImageId,
+          avgRating: this.restaurant.avgRating,
+          reviews: this.reviews,
+        }
+      );
+      if (result.status === 200) {
+        location.reload();
+      }
     },
   },
   components: {
@@ -98,6 +154,8 @@ export default {
       return;
     }
     this.username = JSON.parse(user).name;
+    this.isAdmin = JSON.parse(user).isAdmin;
+    this.userId = JSON.parse(user).id;
     let details = await axios.get(
       `http://localhost:3000/restaurants/${this.id}`
     );
@@ -140,7 +198,15 @@ ul li {
   height: 80px;
   display: flex;
   flex-direction: column;
+  position: relative;
   /* background-color: red; */
+}
+ul li .delete-icon {
+  position: absolute;
+  cursor: pointer;
+  scale: 0.8;
+  right: 0;
+  bottom: 0;
 }
 ul li .info {
   display: flex;

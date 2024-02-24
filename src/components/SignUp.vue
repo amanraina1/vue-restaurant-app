@@ -31,6 +31,7 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
+        isAdmin: false,
       });
       if (result.status === 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));

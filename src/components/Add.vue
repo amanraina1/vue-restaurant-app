@@ -26,7 +26,7 @@
     />
     <input
       type="text"
-      placeholder="Image Link (if no image, default will be displayed)"
+      placeholder="Image Link (if no link, default will be added)"
       v-model="restaurant.cloudinaryImageId"
       name="image"
     />
@@ -68,6 +68,7 @@ export default {
         address: this.restaurant.address,
         cloudinaryImageId: this.restaurant.cloudinaryImageId,
         avgRating: this.restaurant.avgRating,
+        reviews: [],
       });
       if (result.status === 201) {
         this.$router.push({ name: "Home" });

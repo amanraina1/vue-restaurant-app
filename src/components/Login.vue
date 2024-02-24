@@ -53,6 +53,8 @@ export default {
       if (result.status === 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         this.$router.push({ name: "Home" });
+      } else {
+        alert("Not Valid Credentials");
       }
     },
   },

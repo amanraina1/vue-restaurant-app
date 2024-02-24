@@ -8,17 +8,17 @@
       "isAdmin": true
     },
     {
+      "id": "4876",
+      "name": "Peter",
+      "email": "peter@mail.com",
+      "password": "peter",
+      "isAdmin": false
+    },
+    {
       "id": "2338",
       "name": "testing",
       "email": "test@testing.com",
       "password": "122334",
-      "isAdmin": false
-    },
-    {
-      "id": "e12c",
-      "name": "peter",
-      "email": "peter@test.com",
-      "password": "peter123",
       "isAdmin": false
     },
     {
@@ -31,16 +31,15 @@
     {
       "id": "4ca6",
       "name": "Naruto",
-      "email": "naruto.uzumaki@gmail.com",
-      "password": "dattebayo",
+      "email": "naruto@mail.com",
+      "password": "naruto",
       "isAdmin": false
     },
     {
-      "id": "e2ed",
+      "id": "e12c",
       "name": "Aman Raina",
-      "email": "aman@test413.com",
-      "password": "123Aman",
-      "isAdmin": false
+      "email": "aman@test.com",
+      "password": "122334"
     },
     {
       "id": "43f3",
@@ -58,12 +57,6 @@
       "avgRating": "4.5",
       "reviews": [
         {
-          "id": "e2ed",
-          "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "5"
-        },
-        {
           "id": "4ca6",
           "name": "Naruto",
           "message": "Good Ambiemce",
@@ -73,6 +66,12 @@
           "id": "e12c",
           "name": "Aman Raina",
           "message": "Careful and good staff",
+          "rating": "5"
+        },
+        {
+          "id": "2338",
+          "name": "testing",
+          "message": "Highly recommended",
           "rating": "5"
         }
       ],
@@ -86,10 +85,10 @@
       "avgRating": "4.5",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -101,12 +100,6 @@
           "id": "e12c",
           "name": "Aman Raina",
           "message": "Careful and good staff",
-          "rating": "4"
-        },
-        {
-          "id": "2338",
-          "name": "testing",
-          "message": "Vey good",
           "rating": "4"
         }
       ],
@@ -120,10 +113,10 @@
       "avgRating": "4.4",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -138,10 +131,10 @@
           "rating": "4"
         },
         {
-          "id": "2338",
-          "name": "testing",
-          "message": "unit test",
-          "rating": "2"
+          "id": "43f3",
+          "name": "User",
+          "message": "Exceptional food and ambience",
+          "rating": "5"
         }
       ],
       "id": "411518"
@@ -152,10 +145,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2418209798927d733a50f5d2ebcc2aee",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -180,10 +173,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -208,10 +201,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -236,10 +229,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jkuj5aui7wwmwc0eidog",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -264,10 +257,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6e97ac8f5c89213610309ef1940afa05",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -292,10 +285,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/amhewecesj0lshepdytl",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -320,10 +313,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -348,10 +341,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5a148e63e9c54942e37627da1aa156be",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -376,10 +369,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/a66fa8f5befa65947d9e20f29a863ce0",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -405,10 +398,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/nrqjhlsss9iadlaaqrqm",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -432,10 +425,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cace805a6ba74137571d0f7ac92302b1",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -460,10 +453,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/nqq8t62fvm09mmjvskjz",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -488,10 +481,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/313485a665bd0f4958fdc14ead8afade",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -516,10 +509,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d5b1de25620e4681c122e33061bd4f75",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -544,10 +537,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/85825a6d74b1059a63a9b688de9f67ce",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -572,10 +565,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b9f3278aa437785772e368cfe584b342",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -600,10 +593,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/81ac87e5c89c16adc867be38ce5a1ba3",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -627,10 +620,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -656,10 +649,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -684,10 +677,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/78408969d316991befba0a6eca303e1c",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -712,10 +705,10 @@
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/81ac87e5c89c16adc867be38ce5a1ba3",
       "reviews": [
         {
-          "id": "e2ed",
+          "id": "4876",
           "name": "Peter",
-          "message": "Nice Restaurant",
-          "rating": "4"
+          "message": "Nice restaurant",
+          "rating": "5"
         },
         {
           "id": "4ca6",
@@ -733,6 +726,22 @@
       "address": "Jmd Galleria",
       "contact": "243098",
       "avgRating": "4.6"
+    },
+    {
+      "name": "Aroma Restaurant",
+      "contact": "98765432",
+      "address": "Near Byepass raod",
+      "cloudinaryImageId": "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "avgRating": "4",
+      "reviews": [
+        {
+          "id": "c0a3",
+          "name": "Admin",
+          "message": "Exceptional food and ambience",
+          "rating": "5"
+        }
+      ],
+      "id": "45e5"
     }
   ]
 }

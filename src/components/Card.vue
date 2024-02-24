@@ -2,17 +2,18 @@
   <div class="image-container">
     <img :src="cloudinaryImageId" alt="restaurant image" />
     <div class="details">
-      <span class="name"> {{ name }}</span>
+      <h3 class="name">{{ name }}</h3>
       <span class="ratings">⭐️{{ avgRating }} • {{ contact }}</span>
       <span class="address">{{ address }}</span>
       <div class="icon">
         <router-link :to="'/update/' + id" v-if="isAdmin">
-          <img src="../assets/update.png" />
+          <img title="Update" src="../assets/update.png" />
         </router-link>
         <router-link :to="'/review/' + id">
           <button>See All reviews</button>
         </router-link>
         <img
+          title="Delete"
           v-if="isAdmin"
           v-on:click="deleteCard(id)"
           src="../assets/delete.png"
@@ -63,46 +64,73 @@ export default {
 }
 
 .image-container {
-  width: 250px;
-  height: 400px;
+  /* background-color: green; */
+  width: 273px;
+  height: 383px;
   margin: 50px;
+  /* border: 1px solid black; */
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.image-container:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  scale: 0.9;
+  transition: all 0.05s ease;
+  border-bottom: 1px solid black;
+}
 .image-container img {
   width: 100%;
+  /* height: 182px; */
   height: 65%;
   object-fit: cover;
+  border-radius: 20px;
 }
-
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35%;
+}
 .name {
+  /* background-color: red; */
+  width: 100%;
+  height: 20%;
+  /* width: 90%;
   display: block;
   font-size: 20px;
   margin: 5px;
-  font-weight: 700;
+  font-weight: 700; */
 }
 
 .ratings {
-  display: block;
-  margin: 5px;
+  /* background-color: yellow; */
   width: 100%;
+  height: 15%;
+  /* display: block;
+  margin: 5px;
+  width: 100%; */
 }
 
 .address {
-  display: block;
+  /* display: block; */
+  /* background-color: lightblue; */
+  height: 15%;
 }
 
 .icon {
-  width: 90%;
+  width: 100%;
+  height: 40%;
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* background-color: blue; */
 }
 
 .icon img {
   cursor: pointer;
+  /* width: 100px; */
+  /* background-color: green; */
 }
 button {
   padding: 5px 10px;
