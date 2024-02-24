@@ -78,6 +78,12 @@ export default {
     let user = localStorage.getItem("user-info");
     if (!user) {
       this.$router.push({ name: "SignUp" });
+      return;
+    }
+    let admin = JSON.parse(user).isAdmin;
+    if (user && !admin) {
+      this.$router.push({ name: "Home" });
+      return;
     }
     this.username = JSON.parse(user).name;
   },

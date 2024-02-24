@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <router-link to="/">Home</router-link>
-    <router-link to="add">Add Restaurant</router-link>
+    <router-link v-if="isAdmin" to="/add">Add Restaurant</router-link>
     <a v-on:click="logout">Logout</a>
   </div>
 </template>
@@ -9,11 +9,24 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      isAdmin: false,
+    };
+  },
   methods: {
     logout() {
       localStorage.clear();
       this.$router.push({ name: "Login" });
     },
+  },
+  mounted() {
+    const user = localStorage.getItem("user-info");
+    if (!user) {
+      this.$router.push({ name: "SignUp" });
+      return;
+    }
+    this.isAdmin = JSON.parse(user).isAdmin;
   },
 };
 </script>

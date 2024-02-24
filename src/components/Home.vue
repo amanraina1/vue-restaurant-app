@@ -34,6 +34,7 @@ export default {
       const user = localStorage.getItem("user-info");
       if (!user) {
         this.$router.push({ name: "SignUp" });
+        return;
       }
       this.name = JSON.parse(user).name;
       let result = await axios.get("http://localhost:3000/restaurants");
@@ -50,11 +51,6 @@ export default {
 };
 </script>
 <style scoped>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 ul {
   margin-top: 10px;
   justify-content: space-between;
