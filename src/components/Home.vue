@@ -102,7 +102,7 @@ ul {
   flex-wrap: wrap;
   list-style-type: none;
   border-radius: 50px;
-  background-color: rgb(238, 237, 235);
+  /* background-color: rgb(238, 237, 235); */
   /* border: 1px solid black; */
 }
 </style>
