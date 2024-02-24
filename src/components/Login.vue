@@ -13,6 +13,15 @@
       </router-link>
     </p>
   </div>
+  <br />
+  <br />
+  <br />
+  <h4>For Admin Login</h4>
+  <span>Email - admin@example.com | PW - admin</span>
+  <br />
+  <br />
+  <h4>For User Login</h4>
+  <span>Email - user@example.com | PW - user</span>
 </template>
 <script>
 import axios from "axios";

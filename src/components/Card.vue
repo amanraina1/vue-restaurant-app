@@ -45,7 +45,7 @@ export default {
         `http://localhost:3000/restaurants/${id}`
       );
       if (result.status === 200) {
-        alert("Restaurant deleted from the list successfully");
+        location.reload();
       }
     },
   },
@@ -65,7 +65,7 @@ export default {
 .image-container {
   width: 250px;
   height: 400px;
-  margin: 30px;
+  margin: 50px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

@@ -41,6 +41,12 @@
       "email": "aman@test413.com",
       "password": "123Aman",
       "isAdmin": false
+    },
+    {
+      "id": "43f3",
+      "name": "User",
+      "email": "user@example.com",
+      "password": "user"
     }
   ],
   "restaurants": [
@@ -55,25 +61,19 @@
           "id": "e2ed",
           "name": "Peter",
           "message": "Nice Restaurant",
-          "rating": "4"
+          "rating": "5"
         },
         {
           "id": "4ca6",
           "name": "Naruto",
           "message": "Good Ambiemce",
-          "rating": "4"
+          "rating": "3"
         },
         {
           "id": "e12c",
           "name": "Aman Raina",
           "message": "Careful and good staff",
-          "rating": "4"
-        },
-        {
-          "id": "c0a3",
-          "name": "Admin",
-          "message": "testing rating system",
-          "rating": "3"
+          "rating": "5"
         }
       ],
       "id": "c97d"
@@ -399,8 +399,9 @@
       "avgRating": "4.3"
     },
     {
-      "id": "355339",
       "name": "Grameen Kulfi",
+      "contact": "465677",
+      "address": "Acharyapuri Mode",
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/nrqjhlsss9iadlaaqrqm",
       "reviews": [
         {
@@ -422,9 +423,8 @@
           "rating": "4"
         }
       ],
-      "address": "Acharyapuri Mode",
-      "contact": "465677",
-      "avgRating": "4.6"
+      "avgRating": "5",
+      "id": "355339"
     },
     {
       "id": "68318",
