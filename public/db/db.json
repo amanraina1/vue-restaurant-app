@@ -73,6 +73,12 @@
           "name": "testing",
           "message": "Highly recommended",
           "rating": "5"
+        },
+        {
+          "id": "43f3",
+          "name": "User",
+          "message": "Exceptional food and ambience",
+          "rating": "4"
         }
       ],
       "id": "c97d"

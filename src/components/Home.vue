@@ -2,6 +2,10 @@
   <Header />
   <br />
   <h1>Hello {{ name }}, Welcome to Home page</h1>
+  <span class="search-bar">
+    <input type="text" placeholder="Enter Name to search" v-model="search" />
+    <button @click="searchRestaurant">Search</button>
+  </span>
 
   <ul>
     <!-- <img src="../assets/placeholder-restaurant.png" /> -->
@@ -26,10 +30,18 @@ export default {
   data() {
     return {
       name: "",
+      search: "",
       restaurant: [],
     };
   },
   methods: {
+    searchRestaurant() {
+      const restaurantName = this.search;
+      const list = this.restaurant.filter((item) =>
+        item.name.includes(this.search)
+      );
+      this.restaurant = list;
+    },
     async loadData() {
       const user = localStorage.getItem("user-info");
       if (!user) {
@@ -51,12 +63,40 @@ export default {
 };
 </script>
 <style scoped>
+.search-bar {
+  width: min-content;
+  height: min-content;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  gap: 20px;
+  display: flex;
+}
+.search-bar input {
+  /* height: 100%; */
+  width: 150px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  border: 1px solid skyblue;
+}
+.search-bar button {
+  width: 150px;
+  height: 40px;
+  border: 1px solid skyblue;
+  color: #fff;
+  background-color: skyblue;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background-color: #f5f5f5;
+  color: skyblue;
+}
 ul {
   margin-top: 10px;
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  /* border: 1px solid black; */
 }
 </style>
