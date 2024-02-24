@@ -4,7 +4,9 @@
   <h1>Hello {{ name }}, Welcome to Home page</h1>
   <span class="search-bar">
     <input type="text" placeholder="Enter Name to search" v-model="search" />
-    <button @click="searchRestaurant">Search</button>
+    <button title="Search a restaurant" @click="searchRestaurant">
+      Search
+    </button>
   </span>
 
   <ul>
@@ -74,7 +76,7 @@ export default {
 }
 .search-bar input {
   /* height: 100%; */
-  width: 150px;
+  width: 160px;
   height: 40px;
   padding-left: 20px;
   display: block;
@@ -93,10 +95,14 @@ export default {
   color: skyblue;
 }
 ul {
+  width: 80%;
   margin-top: 10px;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  border-radius: 50px;
+  background-color: rgb(238, 237, 235);
+  /* border: 1px solid black; */
 }
 </style>

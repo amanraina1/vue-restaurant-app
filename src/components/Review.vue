@@ -5,7 +5,7 @@
     <h1>Hello {{ username }}, Review a restaurant</h1>
     <br /><br />
     <ul>
-      <li v-for="item in reviews" :key="item">
+      <li v-for="item in reviews" :key="item.name">
         <div class="info">
           <span class="profile">
             <img src="../assets/avatar.svg" alt="user avatar" />
@@ -180,6 +180,7 @@ export default {
   height: 100vh;
   overflow-y: scroll;
 }
+
 ul {
   width: 100%;
   display: flex;

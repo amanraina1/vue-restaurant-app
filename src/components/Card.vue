@@ -10,7 +10,7 @@
           <img title="Update" src="../assets/update.png" />
         </router-link>
         <router-link :to="'/review/' + id">
-          <button>See All reviews</button>
+          <button title="See Reviews">See All reviews</button>
         </router-link>
         <img
           title="Delete"
@@ -57,14 +57,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .details .icon img {
   width: 30px;
   height: 30px;
 }
 
 .image-container {
-  /* background-color: green; */
   width: 273px;
   height: 383px;
   margin: 50px;
@@ -77,6 +76,7 @@ export default {
   scale: 0.9;
   transition: all 0.05s ease;
   border-bottom: 1px solid black;
+  background-color: #f6f6f6;
 }
 .image-container img {
   width: 100%;
