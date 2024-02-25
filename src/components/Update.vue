@@ -1,5 +1,15 @@
 <template>
   <Header />
+  <br />
+  <div class="breadcrumbs-path">
+    <router-link to="/">Home </router-link>
+    <div v-for="(path, index) in fullPaths">
+      <span v-if="index === fullPaths.length - 1"> / {{ path }}</span>
+      <span v-else
+        >/<router-link to="path">{{ path }} </router-link></span
+      >
+    </div>
+  </div>
   <br /><br />
   <h1>Hello {{ username }}, Update a restaurant</h1>
   <br /><br />
@@ -47,7 +57,9 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
+      fullPaths: "",
       username: "",
+      reviews: "",
       restaurant: {
         name: "",
         address: "",
@@ -74,6 +86,7 @@ export default {
           address: this.restaurant.address,
           cloudinaryImageId: this.restaurant.cloudinaryImageId,
           avgRating: this.restaurant.avgRating,
+          reviews: this.reviews,
         }
       );
       if (result.status === 200) {
@@ -86,6 +99,10 @@ export default {
   },
   async mounted() {
     let user = localStorage.getItem("user-info");
+    const { fullPath } = this.$route;
+    const fullPaths2 = fullPath.split("/").filter((x) => x);
+    this.fullPaths = fullPaths2;
+    // console.log(this.fullPaths);
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;
@@ -105,7 +122,29 @@ export default {
       this.restaurant.contact = details.data.contact;
       this.restaurant.cloudinaryImageId = details.data.cloudinaryImageId;
       this.restaurant.avgRating = details.data.avgRating;
+      this.reviews = details.data.reviews;
     }
   },
 };
 </script>
+<style>
+.breadcrumbs-path {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  text-transform: capitalize;
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.breadcrumbs-path a {
+  text-decoration: none;
+  color: #333;
+  background-color: rgb(235, 235, 235);
+}
+.breadcrumbs-path span {
+  color: #999;
+  background-color: rgb(235, 235, 235);
+}
+</style>

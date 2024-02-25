@@ -1,5 +1,15 @@
 <template>
   <Header />
+  <br />
+  <div class="breadcrumbs-path">
+    <router-link to="/">Home </router-link>
+    <div v-for="(path, index) in fullPaths">
+      <span v-if="index === fullPaths.length - 1"> / {{ path }}</span>
+      <span v-else
+        >/<router-link to="path">{{ path }} </router-link></span
+      >
+    </div>
+  </div>
   <br /><br />
   <div class="container">
     <h1>Hello {{ username }}, Review a restaurant</h1>
@@ -65,6 +75,7 @@ export default {
       message: "",
       isAdmin: false,
       id: this.$route.params.id,
+      fullPaths: "",
       reviews: [],
       restaurant: {
         name: "",
@@ -149,6 +160,10 @@ export default {
   },
   async mounted() {
     const user = localStorage.getItem("user-info");
+    const { fullPath } = this.$route;
+    const fullPaths2 = fullPath.split("/").filter((x) => x);
+    this.fullPaths = fullPaths2;
+
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;
@@ -226,5 +241,24 @@ ul li img {
 }
 ul li h4 {
   display: flex;
+}
+.breadcrumbs-path {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  text-transform: capitalize;
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.breadcrumbs-path a {
+  text-decoration: none;
+  color: #333;
+  background-color: rgb(235, 235, 235);
+}
+.breadcrumbs-path span {
+  color: #999;
+  background-color: rgb(235, 235, 235);
 }
 </style>

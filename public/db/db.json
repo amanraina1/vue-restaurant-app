@@ -89,6 +89,7 @@
       "address": "Sidhra Road Byepass",
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
       "avgRating": "4.5",
+      "id": "3939",
       "reviews": [
         {
           "id": "4876",
@@ -108,8 +109,7 @@
           "message": "Careful and good staff",
           "rating": "4"
         }
-      ],
-      "id": "3939"
+      ]
     },
     {
       "name": "McDonald's",
@@ -342,9 +342,11 @@
       "avgRating": "4.3"
     },
     {
-      "id": "21742",
       "name": "Wow! Momo",
+      "contact": "586767347",
+      "address": "Huda Market",
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5a148e63e9c54942e37627da1aa156be",
+      "avgRating": "4.1",
       "reviews": [
         {
           "id": "4876",
@@ -365,9 +367,7 @@
           "rating": "4"
         }
       ],
-      "address": "Huda Market",
-      "contact": "586767347",
-      "avgRating": "4.1"
+      "id": "21742"
     },
     {
       "id": "76060",
