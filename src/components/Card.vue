@@ -65,8 +65,11 @@ export default {
 
 .image-container {
   width: 273px;
-  height: 383px;
-  margin: 50px;
+  height: 340px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   /* border: 1px solid black; */
   border-radius: 20px;
   overflow: hidden;

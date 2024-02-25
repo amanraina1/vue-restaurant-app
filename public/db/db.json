@@ -50,68 +50,6 @@
   ],
   "restaurants": [
     {
-      "name": "Bakingo",
-      "contact": "96222",
-      "address": "Shastri Nagar",
-      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
-      "avgRating": "4.5",
-      "reviews": [
-        {
-          "id": "4ca6",
-          "name": "Naruto",
-          "message": "Good Ambiemce",
-          "rating": "3"
-        },
-        {
-          "id": "e12c",
-          "name": "Aman Raina",
-          "message": "Careful and good staff",
-          "rating": "5"
-        },
-        {
-          "id": "2338",
-          "name": "testing",
-          "message": "Highly recommended",
-          "rating": "5"
-        },
-        {
-          "id": "43f3",
-          "name": "User",
-          "message": "Exceptional food and ambience",
-          "rating": "4"
-        }
-      ],
-      "id": "c97d"
-    },
-    {
-      "name": "Subway",
-      "contact": "456789",
-      "address": "Sidhra Road Byepass",
-      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
-      "avgRating": "4.5",
-      "id": "3939",
-      "reviews": [
-        {
-          "id": "4876",
-          "name": "Peter",
-          "message": "Nice restaurant",
-          "rating": "5"
-        },
-        {
-          "id": "4ca6",
-          "name": "Naruto",
-          "message": "Good Ambiemce",
-          "rating": "4"
-        },
-        {
-          "id": "e12c",
-          "name": "Aman Raina",
-          "message": "Careful and good staff",
-          "rating": "4"
-        }
-      ]
-    },
-    {
       "name": "McDonald's",
       "contact": "23451",
       "address": "Sector 48",
@@ -566,6 +504,34 @@
       "avgRating": "4.6"
     },
     {
+      "name": "Subway",
+      "contact": "456789",
+      "address": "Sidhra Road Byepass",
+      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
+      "avgRating": "4.5",
+      "id": "3939",
+      "reviews": [
+        {
+          "id": "4876",
+          "name": "Peter",
+          "message": "Nice restaurant",
+          "rating": "5"
+        },
+        {
+          "id": "4ca6",
+          "name": "Naruto",
+          "message": "Good Ambiemce",
+          "rating": "4"
+        },
+        {
+          "id": "e12c",
+          "name": "Aman Raina",
+          "message": "Careful and good staff",
+          "rating": "4"
+        }
+      ]
+    },
+    {
       "id": "53056",
       "name": "Giani",
       "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b9f3278aa437785772e368cfe584b342",
@@ -732,6 +698,40 @@
       "address": "Jmd Galleria",
       "contact": "243098",
       "avgRating": "4.6"
+    },
+    {
+      "name": "Bakingo",
+      "contact": "96222",
+      "address": "Shastri Nagar",
+      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fa68ac0434f668bba1322abda36570b3",
+      "avgRating": "4.5",
+      "reviews": [
+        {
+          "id": "4ca6",
+          "name": "Naruto",
+          "message": "Good Ambiemce",
+          "rating": "3"
+        },
+        {
+          "id": "e12c",
+          "name": "Aman Raina",
+          "message": "Careful and good staff",
+          "rating": "5"
+        },
+        {
+          "id": "2338",
+          "name": "testing",
+          "message": "Highly recommended",
+          "rating": "5"
+        },
+        {
+          "id": "43f3",
+          "name": "User",
+          "message": "Exceptional food and ambience",
+          "rating": "4"
+        }
+      ],
+      "id": "c97d"
     },
     {
       "name": "Aroma Restaurant",

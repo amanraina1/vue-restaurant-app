@@ -1,5 +1,15 @@
 <template>
   <Header />
+  <br />
+  <div class="breadcrumbs-path">
+    <router-link to="/">Home </router-link>
+    <div v-for="(path, index) in fullPaths">
+      <span v-if="index === fullPaths.length - 1"> / {{ path }}</span>
+      <span v-else
+        >/<router-link to="path">{{ path }} </router-link></span
+      >
+    </div>
+  </div>
   <br /><br />
 
   <h1>Hello {{ username }}, Add a new restaurant</h1>
@@ -41,6 +51,7 @@ export default {
   data() {
     return {
       username: "",
+      fullPaths: "",
       restaurant: {
         name: "",
         address: "",
@@ -77,6 +88,9 @@ export default {
   },
   mounted() {
     let user = localStorage.getItem("user-info");
+    const { fullPath } = this.$route;
+    const fullPaths2 = fullPath.split("/").filter((x) => x);
+    this.fullPaths = fullPaths2;
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;
