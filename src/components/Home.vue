@@ -126,18 +126,15 @@ export default {
 }
 ul {
   width: 80%;
-  /* margin-top: 10px; */
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   border-radius: 50px;
-  /* background-color: rgb(238, 237, 235); */
   /* border: 1px solid black; */
 }
 .pagination {
   padding: 10px;
-  /* margin: 15px 0; */
   display: flex;
   justify-content: center;
 }

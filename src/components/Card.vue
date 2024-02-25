@@ -10,7 +10,7 @@
           <img title="Update" src="../assets/update.png" />
         </router-link>
         <router-link :to="'/review/' + id">
-          <button title="See Reviews">See All reviews</button>
+          <button title="See Reviews">See Reviews</button>
         </router-link>
         <img
           title="Delete"
