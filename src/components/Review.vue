@@ -1,6 +1,8 @@
 <template>
+  {{ this.fillDetails }}
   <Header />
   <br />
+
   <div class="breadcrumbs-path">
     <router-link to="/">Home </router-link>
     <div v-for="(path, index) in fullPaths">
@@ -87,12 +89,13 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["updatedRestaurant"]),
+    ...mapActions(["fetchRestaurants", "updatedRestaurant"]),
+
     async deleteComment(id) {
       if (this.isAdmin) {
         // Logic to delete  comment by admin
-        const deleteUser = this.reviews.filter((item) => item.id !== id);
-        this.reviews = deleteUser;
+        this.reviews = this.reviews.filter((item) => item.id !== id);
+        // this.reviews = deleteUser;
       } else {
         // Logic for deleting the comment on clicking of the delete icon
         const validateUser = this.reviews.filter(
@@ -100,8 +103,8 @@ export default {
         );
         this.reviews = validateUser;
       }
-
-      let result = this.updatedRestaurant({
+      // this.$store.dispatch("updatedRestaurants");
+      this.updatedRestaurant({
         id: this.id,
         name: this.restaurant.name,
         contact: this.restaurant.contact,
@@ -110,10 +113,8 @@ export default {
         avgRating: this.restaurant.avgRating,
         reviews: this.reviews,
       });
-      if (result.status === 200) {
-        location.reload();
-      }
     },
+
     async print() {
       // Validation for both fields, so they are not empty
       if (!this.message || !this.rating) {
@@ -156,35 +157,51 @@ export default {
       }
     },
   },
+  computed: {
+    fillDetails() {
+      this.restaurant.name = this.getRestaurantById?.name;
+      this.restaurant.address = this.getRestaurantById?.address;
+      this.restaurant.contact = this.getRestaurantById?.contact;
+      this.restaurant.cloudinaryImageId =
+        this.getRestaurantById?.cloudinaryImageId;
+      this.restaurant.avgRating = this.getRestaurantById?.avgRating;
+      this.reviews = this.getRestaurantById?.reviews;
+    },
+    getRestaurantById() {
+      return this.$store.getters.getRestaurant(this.id);
+    },
+  },
   components: {
     Header,
   },
   async mounted() {
     const user = localStorage.getItem("user-info");
     const { fullPath } = this.$route;
-    const fullPaths2 = fullPath.split("/").filter((x) => x);
-    this.fullPaths = fullPaths2;
+    this.fullPaths = fullPath.split("/").filter((x) => x);
 
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;
     }
+
     this.username = JSON.parse(user).name;
     this.isAdmin = JSON.parse(user).isAdmin;
     this.userId = JSON.parse(user).id;
-    let details = this.$store.getters.getRestaurant(this.id);
-    // console.log(details);
-    if (details) {
-      this.restaurant.name = details.name;
-      this.restaurant.address = details.address;
-      this.restaurant.contact = details.contact;
-      this.restaurant.cloudinaryImageId = details.cloudinaryImageId;
-      this.restaurant.avgRating = details.avgRating;
-      this.reviews = details.reviews;
-    }
+    this.$store.dispatch("fetchRestaurants");
+    this.fetchRestaurants();
+    // let details = this.$store.getters.getRestaurant(this.id);
+    // if (details) {
+    //   this.restaurant.name = details.name;
+    //   this.restaurant.address = details.address;
+    //   this.restaurant.contact = details.contact;
+    //   this.restaurant.cloudinaryImageId = details.cloudinaryImageId;
+    //   this.restaurant.avgRating = details.avgRating;
+    //   this.reviews = details.reviews;
+    // }
   },
 };
 </script>
+
 <style scoped>
 .container {
   display: flex;

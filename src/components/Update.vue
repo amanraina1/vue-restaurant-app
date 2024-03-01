@@ -1,6 +1,7 @@
 <template>
   <Header />
   <br />
+  {{ this.fillDetails }}
   <div class="breadcrumbs-path">
     <router-link to="/">Home </router-link>
     <div v-for="(path, index) in fullPaths">
@@ -70,7 +71,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["updatedRestaurant"]),
+    ...mapActions(["updatedRestaurant", "fetchRestaurants"]),
     async updateRestaurant() {
       if (this.restaurant.avgRating === "") {
         this.restaurant.avgRating = "4";
@@ -93,15 +94,28 @@ export default {
       // }
     },
   },
+  computed: {
+    fillDetails() {
+      this.restaurant.name = this.getRestaurantById?.name;
+      this.restaurant.address = this.getRestaurantById?.address;
+      this.restaurant.contact = this.getRestaurantById?.contact;
+      this.restaurant.cloudinaryImageId =
+        this.getRestaurantById?.cloudinaryImageId;
+      this.restaurant.avgRating = this.getRestaurantById?.avgRating;
+      this.reviews = this.getRestaurantById?.reviews;
+    },
+    getRestaurantById() {
+      return this.$store.getters.getRestaurant(this.id);
+    },
+  },
   components: {
     Header,
   },
+
   async mounted() {
     let user = localStorage.getItem("user-info");
     const { fullPath } = this.$route;
-    const fullPaths2 = fullPath.split("/").filter((x) => x);
-    this.fullPaths = fullPaths2;
-    // console.log(this.fullPaths);
+    this.fullPaths = fullPath.split("/").filter((x) => x);
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;
@@ -112,16 +126,8 @@ export default {
       return;
     }
     this.username = JSON.parse(user).name;
-    let details = this.$store.getters.getRestaurant(this.id);
-    // console.log(details);
-    if (details) {
-      this.restaurant.name = details.name;
-      this.restaurant.address = details.address;
-      this.restaurant.contact = details.contact;
-      this.restaurant.cloudinaryImageId = details.cloudinaryImageId;
-      this.restaurant.avgRating = details.avgRating;
-      this.reviews = details.reviews;
-    }
+    this.$store.dispatch("fetchRestaurants");
+    this.fetchRestaurants();
   },
 };
 </script>
