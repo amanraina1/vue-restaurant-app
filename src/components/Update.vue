@@ -51,7 +51,7 @@
 </template>
 <script>
 import Header from "./Header.vue";
-import axios from "axios";
+import { mapActions } from "vuex";
 export default {
   name: "Update",
   data() {
@@ -70,6 +70,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["updatedRestaurant"]),
     async updateRestaurant() {
       if (this.restaurant.avgRating === "") {
         this.restaurant.avgRating = "4";
@@ -78,20 +79,18 @@ export default {
         this.restaurant.cloudinaryImageId =
           "/src/assets/placeholder-restaurant.png";
       }
-      let result = await axios.put(
-        `http://127.0.0.1:3000/restaurants/${this.id}`,
-        {
-          name: this.restaurant.name,
-          contact: this.restaurant.contact,
-          address: this.restaurant.address,
-          cloudinaryImageId: this.restaurant.cloudinaryImageId,
-          avgRating: this.restaurant.avgRating,
-          reviews: this.reviews,
-        }
-      );
-      if (result.status === 200) {
-        this.$router.push({ name: "Home" });
-      }
+      this.updatedRestaurant({
+        id: this.id,
+        name: this.restaurant.name,
+        contact: this.restaurant.contact,
+        address: this.restaurant.address,
+        cloudinaryImageId: this.restaurant.cloudinaryImageId,
+        avgRating: this.restaurant.avgRating,
+        reviews: this.reviews,
+      });
+      // if (result.status === 200) {
+      //   this.$router.push({ name: "Home" });
+      // }
     },
   },
   components: {
@@ -113,16 +112,15 @@ export default {
       return;
     }
     this.username = JSON.parse(user).name;
-    let details = await axios.get(
-      `http://localhost:3000/restaurants/${this.id}`
-    );
+    let details = this.$store.getters.getRestaurant(this.id);
+    // console.log(details);
     if (details) {
-      this.restaurant.name = details.data.name;
-      this.restaurant.address = details.data.address;
-      this.restaurant.contact = details.data.contact;
-      this.restaurant.cloudinaryImageId = details.data.cloudinaryImageId;
-      this.restaurant.avgRating = details.data.avgRating;
-      this.reviews = details.data.reviews;
+      this.restaurant.name = details.name;
+      this.restaurant.address = details.address;
+      this.restaurant.contact = details.contact;
+      this.restaurant.cloudinaryImageId = details.cloudinaryImageId;
+      this.restaurant.avgRating = details.avgRating;
+      this.reviews = details.reviews;
     }
   },
 };

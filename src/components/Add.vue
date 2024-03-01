@@ -40,12 +40,12 @@
       v-model="restaurant.cloudinaryImageId"
       name="image"
     />
-    <button type="button" v-on:click="addRestaurant">Add Restaurant</button>
+    <button type="button" v-on:click="addRestaurantNew">Add Restaurant</button>
   </form>
 </template>
 <script>
-import axios from "axios";
 import Header from "./Header.vue";
+import { mapActions } from "vuex";
 export default {
   name: "Add",
   data() {
@@ -65,7 +65,8 @@ export default {
     Header,
   },
   methods: {
-    async addRestaurant() {
+    ...mapActions(["addRestaurants"]),
+    async addRestaurantNew() {
       if (this.restaurant.avgRating === "") {
         this.restaurant.avgRating = "4";
       }
@@ -73,17 +74,16 @@ export default {
         this.restaurant.cloudinaryImageId =
           "/src/assets/placeholder-restaurant.png";
       }
-      let result = await axios.post("http://localhost:3000/restaurants", {
-        name: this.restaurant.name,
+      this.addRestaurants({
+        restaurantName: this.restaurant.name,
         contact: this.restaurant.contact,
         address: this.restaurant.address,
         cloudinaryImageId: this.restaurant.cloudinaryImageId,
         avgRating: this.restaurant.avgRating,
         reviews: [],
       });
-      if (result.status === 201) {
-        this.$router.push({ name: "Home" });
-      }
+
+      this.$router.push({ name: "Home" });
     },
   },
   mounted() {

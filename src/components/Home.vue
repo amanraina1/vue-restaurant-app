@@ -1,5 +1,6 @@
 <template>
   <Header />
+  <!-- {{ this.restaurant }} -->
   <br />
   <h1>Hello {{ name }}, Welcome to Home page</h1>
   <span class="search-bar">
@@ -11,7 +12,7 @@
 
   <ul>
     <!-- <img src="../assets/placeholder-restaurant.png" /> -->
-    <li v-for="item in restaurant.slice(page * 6 - 6, page * 6)" :key="item.id">
+    <li v-for="item in displayedPosts" :key="item.id">
       <Card
         :name="item.name"
         :address="item.address"
@@ -22,7 +23,7 @@
       />
     </li>
   </ul>
-  <div v-if="restaurant.length > 0" class="pagination">
+  <div v-if="this.restaurant.length > 0" class="pagination">
     <span
       :class="page === 1 ? 'pagination__disable' : ''"
       v-on:click="selectPageHandler(page - 1)"
@@ -31,13 +32,15 @@
     <span
       :class="page === i + 1 ? 'pagination__selected' : ''"
       v-on:click="selectPageHandler(i + 1)"
-      v-for="(item, i) in [...Array(Math.ceil(restaurant.length / 6))]"
+      v-for="(item, i) in [...Array(Math.ceil(this.restaurant.length / 6))]"
     >
       {{ i + 1 }}
     </span>
     <span
       :class="
-        page === Math.ceil(restaurant.length / 6) ? 'pagination__disable' : ''
+        page === Math.ceil(this.restaurant.length / 6)
+          ? 'pagination__disable'
+          : ''
       "
       v-on:click="selectPageHandler(page + 1)"
       >▶️</span
@@ -46,8 +49,9 @@
 </template>
 <script>
 import Header from "./Header.vue";
-import axios from "axios";
 import Card from "./Card.vue";
+import { mapActions } from "vuex";
+
 export default {
   name: "Home",
   data() {
@@ -59,12 +63,23 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["fetchRestaurants"]),
     searchRestaurant() {
-      const restaurantName = this.search;
-      const list = this.restaurant.filter((item) =>
-        item.name.includes(this.search)
+      const list = this.$store.getters.allRestaurants.filter((item) =>
+        item.name?.includes(this.search)
       );
-      this.restaurant = list;
+      this.$store.state.restaurants = list;
+    },
+
+    loadData() {
+      const user = localStorage.getItem("user-info");
+      if (!user) {
+        this.$router.push({ name: "SignUp" });
+        return;
+      }
+      this.name = JSON.parse(user).name;
+      this.$store.dispatch("fetchRestaurants");
+      this.fetchRestaurants();
     },
     selectPageHandler(i) {
       if (
@@ -74,15 +89,14 @@ export default {
       )
         this.page = i;
     },
-    async loadData() {
-      const user = localStorage.getItem("user-info");
-      if (!user) {
-        this.$router.push({ name: "SignUp" });
-        return;
-      }
-      this.name = JSON.parse(user).name;
-      let result = await axios.get("http://localhost:3000/restaurants");
-      this.restaurant = result.data;
+  },
+  computed: {
+    displayedPosts() {
+      this.restaurant = this.$store.getters.allRestaurants;
+      return this.restaurants.slice(this.page * 6 - 6, this.page * 6);
+    },
+    restaurants() {
+      return this.$store.state.restaurants;
     },
   },
   components: {

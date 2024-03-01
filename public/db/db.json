@@ -50,6 +50,34 @@
   ],
   "restaurants": [
     {
+      "name": "Subway",
+      "contact": "456789",
+      "address": "Sidhra Road Byepass",
+      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
+      "avgRating": "4.5",
+      "reviews": [
+        {
+          "id": "4876",
+          "name": "Peter",
+          "message": "Nice restaurant",
+          "rating": "5"
+        },
+        {
+          "id": "4ca6",
+          "name": "Naruto",
+          "message": "Good Ambiemce",
+          "rating": "4"
+        },
+        {
+          "id": "e12c",
+          "name": "Aman Raina",
+          "message": "Careful and good staff",
+          "rating": "4"
+        }
+      ],
+      "id": "3939"
+    },
+    {
       "name": "McDonald's",
       "contact": "23451",
       "address": "Sector 48",
@@ -138,34 +166,6 @@
       "address": "Old DLF Colony",
       "contact": "343534",
       "avgRating": "4.4"
-    },
-    {
-      "id": "11748",
-      "name": "Subway",
-      "cloudinaryImageId": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
-      "reviews": [
-        {
-          "id": "4876",
-          "name": "Peter",
-          "message": "Nice restaurant",
-          "rating": "5"
-        },
-        {
-          "id": "4ca6",
-          "name": "Naruto",
-          "message": "Good Ambiemce",
-          "rating": "4"
-        },
-        {
-          "id": "e12c",
-          "name": "Aman Raina",
-          "message": "Careful and good staff",
-          "rating": "4"
-        }
-      ],
-      "address": "New Colony",
-      "contact": "342567",
-      "avgRating": "4.3"
     },
     {
       "id": "20138",

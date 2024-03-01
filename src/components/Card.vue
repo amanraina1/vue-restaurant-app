@@ -15,7 +15,7 @@
         <img
           title="Delete"
           v-if="isAdmin"
-          v-on:click="deleteCard(id)"
+          v-on:click="removeRestaurants(id)"
           src="../assets/delete.png"
         />
       </div>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapActions } from "vuex";
 export default {
   name: "Card",
   data() {
@@ -41,14 +41,7 @@ export default {
     id: String,
   },
   methods: {
-    async deleteCard(id) {
-      let result = await axios.delete(
-        `http://localhost:3000/restaurants/${id}`
-      );
-      if (result.status === 200) {
-        location.reload();
-      }
-    },
+    ...mapActions(["removeRestaurants"]),
   },
   mounted() {
     const user = localStorage.getItem("user-info");

@@ -64,7 +64,7 @@
 </template>
 <script>
 import Header from "./Header.vue";
-import axios from "axios";
+import { mapActions } from "vuex";
 export default {
   name: "Review",
   data() {
@@ -87,6 +87,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["updatedRestaurant"]),
     async deleteComment(id) {
       if (this.isAdmin) {
         // Logic to delete  comment by admin
@@ -100,17 +101,18 @@ export default {
         this.reviews = validateUser;
       }
 
-      let result = await axios.put(
-        `http://127.0.0.1:3000/restaurants/${this.id}`,
-        {
-          name: this.restaurant.name,
-          contact: this.restaurant.contact,
-          address: this.restaurant.address,
-          cloudinaryImageId: this.restaurant.cloudinaryImageId,
-          avgRating: this.restaurant.avgRating,
-          reviews: this.reviews,
-        }
-      );
+      let result = this.updatedRestaurant({
+        id: this.id,
+        name: this.restaurant.name,
+        contact: this.restaurant.contact,
+        address: this.restaurant.address,
+        cloudinaryImageId: this.restaurant.cloudinaryImageId,
+        avgRating: this.restaurant.avgRating,
+        reviews: this.reviews,
+      });
+      if (result.status === 200) {
+        location.reload();
+      }
     },
     async print() {
       // Validation for both fields, so they are not empty
@@ -139,17 +141,16 @@ export default {
       }
 
       // Updating the database
-      let result = await axios.put(
-        `http://127.0.0.1:3000/restaurants/${this.id}`,
-        {
-          name: this.restaurant.name,
-          contact: this.restaurant.contact,
-          address: this.restaurant.address,
-          cloudinaryImageId: this.restaurant.cloudinaryImageId,
-          avgRating: this.restaurant.avgRating,
-          reviews: this.reviews,
-        }
-      );
+      let result = this.updatedRestaurant({
+        id: this.id,
+        name: this.restaurant.name,
+        contact: this.restaurant.contact,
+        address: this.restaurant.address,
+        cloudinaryImageId: this.restaurant.cloudinaryImageId,
+        avgRating: this.restaurant.avgRating,
+        reviews: this.reviews,
+      });
+
       if (result.status === 200) {
         location.reload();
       }
@@ -171,16 +172,15 @@ export default {
     this.username = JSON.parse(user).name;
     this.isAdmin = JSON.parse(user).isAdmin;
     this.userId = JSON.parse(user).id;
-    let details = await axios.get(
-      `http://localhost:3000/restaurants/${this.id}`
-    );
+    let details = this.$store.getters.getRestaurant(this.id);
+    // console.log(details);
     if (details) {
-      this.restaurant.name = details.data.name;
-      this.restaurant.address = details.data.address;
-      this.restaurant.contact = details.data.contact;
-      this.restaurant.cloudinaryImageId = details.data.cloudinaryImageId;
-      this.restaurant.avgRating = details.data.avgRating;
-      this.reviews = details.data.reviews;
+      this.restaurant.name = details.name;
+      this.restaurant.address = details.address;
+      this.restaurant.contact = details.contact;
+      this.restaurant.cloudinaryImageId = details.cloudinaryImageId;
+      this.restaurant.avgRating = details.avgRating;
+      this.reviews = details.reviews;
     }
   },
 };
