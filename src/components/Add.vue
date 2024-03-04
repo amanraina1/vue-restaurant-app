@@ -89,8 +89,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("user-info");
     const { fullPath } = this.$route;
-    const fullPaths2 = fullPath.split("/").filter((x) => x);
-    this.fullPaths = fullPaths2;
+    this.fullPaths = fullPath.split("/").filter((x) => x);
     if (!user) {
       this.$router.push({ name: "SignUp" });
       return;

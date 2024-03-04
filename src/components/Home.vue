@@ -12,7 +12,7 @@
 
   <ul>
     <!-- <img src="../assets/placeholder-restaurant.png" /> -->
-    <li v-for="item in displayedPosts" :key="item.id">
+    <li v-for="item in displayedPosts">
       <Card
         :name="item.name"
         :address="item.address"
@@ -20,6 +20,7 @@
         :contact="item.contact"
         :cloudinaryImageId="item.cloudinaryImageId"
         :id="item.id"
+        :key="item.id"
       />
     </li>
   </ul>

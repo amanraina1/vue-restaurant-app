@@ -4,7 +4,6 @@ import axios from "axios";
 const store = createStore({
   state: {
     restaurants: [],
-    users: [],
   },
   getters: {
     allRestaurants: (state) => {
@@ -27,11 +26,10 @@ const store = createStore({
     },
     async removeRestaurants({ commit }, id) {
       await axios.delete(`http://localhost:3000/restaurants/${id}`);
-      location.reload();
-      commit("removeRestaurants", id);
+      // location.reload();
+      commit("removeRestaurant", id);
     },
     async updatedRestaurant({ commit }, payload) {
-      //   console.log(payload.id);
       const result = await axios.put(
         `http://localhost:3000/restaurants/${payload.id}`,
         {
@@ -57,16 +55,16 @@ const store = createStore({
 
       commit("addRestaurants", result.data);
     },
-
-    // {{ Users APIs }}
   },
 
   mutations: {
     // {{ Restaurants APIs }}
     setRestaurants: (state, restaurants) => (state.restaurants = restaurants),
 
-    removeRestaurants: (state, id) => {
-      state.todos = state.todos.filter((todo) => todo.id !== id);
+    removeRestaurant: (state, id) => {
+      state.restaurants = state.restaurants.filter(
+        (restaurant) => restaurant.id !== id
+      );
     },
     updatedRestaurants: (state, payload) => {
       const restaurant = state.restaurants.find((x) => x.id === payload.id);
@@ -78,8 +76,6 @@ const store = createStore({
       restaurant.reviews = payload.reviews;
     },
     addRestaurants: (state, title) => state.restaurants.unshift(title),
-
-    // {{ Users APIs }}
   },
 });
 export default store;

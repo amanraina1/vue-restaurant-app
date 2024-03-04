@@ -14,8 +14,8 @@
         </router-link>
         <img
           title="Delete"
-          v-if="isAdmin"
           v-on:click="removeRestaurants(id)"
+          v-if="isAdmin"
           src="../assets/delete.png"
         />
       </div>
@@ -70,6 +70,7 @@ export default {
 .image-container:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   scale: 0.9;
+  border-radius: 0px;
   transition: all 0.05s ease;
   border-bottom: 1px solid black;
   background-color: #f6f6f6;
@@ -79,7 +80,7 @@ export default {
   /* height: 182px; */
   height: 65%;
   object-fit: cover;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 .details {
   display: flex;
